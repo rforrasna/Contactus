@@ -3,11 +3,10 @@ $servername="localhost";
 $username="root";
 $password="";
 $dbname="contactus";
- $fname_error= $lname_error = $email_error = $phone_error = $institution_error ="";
- $fname = $lname = $email = $phone = $institution = $role = $comment= "";
- 
+$result="";
 
- if($_SERVER["REQUEST_METHOD"]=="POST"){
+ if ( isset( $_POST['submit'] ) ) {
+  
   if(empty($_POST["fname"])){
   $fname_error="Please enter your First Name";
   }
@@ -33,15 +32,13 @@ $dbname="contactus";
   }
   else{
   $email=test_data($_POST["email"]);
-  if(!filter_var($email, FILTER_VALIDATE_Email)){
-  $email_error="Invalid email address";
   }
   }
   
   if(empty($_POST["phone"])){
    $phone_error="Please enter your phone number";
   }   else{
-   $phone = text_data($_POST["phone"]);
+   $phone = test_data($_POST["phone"]);
    
   }
      
@@ -60,27 +57,22 @@ $dbname="contactus";
   }
   
   if(empty($_POST["comment"])){
-  $comment="";
+  $message="";
       }
   else{
-  $comment = test_data($_POST["comment"]);
+  $message = test_data($_POST["comment"]);
   }
-  
-  
- }
  
  function test_data($data){
   $data=trim($data);
-  $data=striplashes($data);
   $data=htmlspecialchars($data);
   return $data;
  }
-     
+
 //Create Database Connection 
-$connect=mysql_connect($servername, $username, $password, $dbname);
-
-$sql="INSERT INTO contact (firstname, lastname, email, phone, institution, role, message) VALUES ('$fname','$lname','$email','$phone','$institution','$role','$comment')";
-$result=mysql_query($sql,$connect);
-
-     
+$connect=mysql_connect($servername, $username, $password);
+$db = mysql_select_db($dbname, $connect);
+$sql="INSERT INTO contact (firstname, lastname, email, phone, institution, role, message) VALUES ('$fname','$lname','$email','
+$phone','$institution','$role','$message')";
+$result=mysql_query($sql, $connect);     
 ?>
