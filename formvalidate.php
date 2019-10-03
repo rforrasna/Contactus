@@ -13,7 +13,7 @@ $dbname="contactus";
   }
   else{
   $fname = test_data($_POST["fname"]);
-  if(!preg_match("/^([a-zA-Z' ]+)$/",$fname){
+  if(!preg_match("/^([a-zA-Z' ]+)$/",$fname)){
     $fname_error="Only letters are allowed";
   }
   }
@@ -23,7 +23,7 @@ $dbname="contactus";
   }
   else{
   $lname = test_data($_POST["lname"]);
-  if(!preg_match("/^([a-zA-Z' ]+)$/",$fname){
+  if(!preg_match("/^([a-zA-Z' ]+)$/",$lname)){
     $lname_error="Only letters are allowed";
   }
   }
