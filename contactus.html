@@ -3,14 +3,45 @@
 <head>
   <meta charset="utf-8">
   <title>Contact Us form</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all">
   <?php include ('formprocess.php');?>
 </head>
 
 <body>
   <div class="container">
     <form id="contact" method="POST" action="<?php $_SERVER['PHP_SELF'];?>">
-      <h3>Contact ClickView for any of your sales queries</h3>
+      <h3>Contact ClickView for any of your queries</h3>
       <fieldset>
+        <input type="text" name="fname" placeholder="First Name">
+        <span class="error"><?php $fname_error;?></span>        
+      </fieldset>
+      <fieldset>
+        <input type="text" name="lname" placeholder="Last Name">
+        <span class="error"><?php $lname_error;?></span>        
+      </fieldset>
+      <fieldset>
+        <input type="text" name="email" placeholder="Email Address">
+        <span class="error"><?php $email_error;?></span>        
+      </fieldset>
+      <fieldset>
+        <input type="text" name="phone" placeholder="Phone Number">
+        <span class="error"><?php $phone_error;?></span>        
+      </fieldset>
+      <fieldset>
+        <input type="text" name="institution" placeholder="educational Institution Name">
+        <span class="error"><?php $institution_error;?></span>        
+      </fieldset>
+      <fieldset>
+        <select name="role" required>
+          <option disabled selected style="display:none;">Role</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Principal">Principal</option>
+          <option value="Advisor">Advisor</option>
+          <option value="Other">Other</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="Message" rows="5" name="comment"></textarea>       
       </fieldset>
       
     </form>
