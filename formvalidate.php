@@ -79,8 +79,8 @@ $dbname="contactus";
 //Create Database Connection 
 $connect=mysql_connect($servername, $username, $password, $dbname);
 
-$sql="INSERT INTO contact (firstname, lastname, email, phone, institution, role, message) VALUES ('$fname','$lname','$email','$phone','$institution','$role','$comment')"
-$result=mysql_query($sql);
+$sql="INSERT INTO contact (firstname, lastname, email, phone, institution, role, message) VALUES ('$fname','$lname','$email','$phone','$institution','$role','$comment')";
+$result=mysql_query($sql,$connect);
 
      
 ?>
