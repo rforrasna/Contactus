@@ -1,0 +1,66 @@
+/
+/* small screen */
+@media screen and (max-width:500px) {
+    header{
+        margin-bottom: 0px;
+    }
+
+    nav ul{
+		display: none;
+	}
+    
+	nav select{
+		display: block;
+	}
+    
+    h1 {
+        font-size: 25px;
+        font-weight: 400; 
+    }
+    
+    .title{
+        margin: 15px 0;
+    }
+
+    .contactus-page-wrap form fieldset input[type="button"], 
+    .contactus-page-wrap form fieldset input[type="reset"] {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+    
+    footer {
+        font-size: 9px;
+    }
+}
+
+/* medium screen */
+@media screen and (min-width: 501px) and (max-width:1023px){
+    nav ul li {
+        font-size: 8px;
+        min-width: 9%;
+        margin-right: 1px;
+    }
+
+    nav ul li a {
+        padding: 10px 5px;
+    }
+    
+    h1 {
+        font-size: 2em;
+        font-weight: 400; 
+    }
+    
+
+    .contactus-page-wrap form fieldset button[type="button"], 
+     {
+        padding:7px 20px;
+    }
+}
+
+/* big screen */
+@media screen and (min-width: 1024px) {
+    nav ul li {
+        margin-right: 9px;
+    }
+    
+  }
